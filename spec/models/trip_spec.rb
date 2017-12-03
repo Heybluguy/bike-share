@@ -112,12 +112,44 @@ RSpec.describe Trip do
       expect(Trip.least_popular_bike).to eql(527)
     end
 
-    it "can find most popular ending station" do
+    it "can find least popular bikes usage" do
       Trip.create(duration: 40, start_date: "29/8/2013 18:54", start_station_name: "Golden Gate at Polk", end_date: "29/8/2013 18:56", end_station_name: "Golden Gate at Polk", bike_id: 527, subscription: "Subscriber", zip_code: 94109)
       Trip.create(duration: 109, start_date: "29/8/2013 13:25", start_station_name: "Golden Gate at Polk", end_date: "29/8/2013 13:27", end_station_name: "Adobe on Almaden", bike_id: 679, subscription: "Subscriber", zip_code: 95112)
       Trip.create(duration: 138, start_date: "29/8/2013 16:57", start_station_name: "Post at Kearney", end_date: "29/8/2013 16:59", end_station_name: "Adobe on Almaden", bike_id: 679, subscription: "Subscriber", zip_code: 94117)
 
       expect(Trip.least_popular_bikes_usage).to eql(1)
+    end
+
+    it "can count customer subscription type" do
+      Trip.create(duration: 40, start_date: "29/8/2013 18:54", start_station_name: "Golden Gate at Polk", end_date: "29/8/2013 18:56", end_station_name: "Golden Gate at Polk", bike_id: 527, subscription: "Subscriber", zip_code: 94109)
+      Trip.create(duration: 109, start_date: "29/8/2013 13:25", start_station_name: "Golden Gate at Polk", end_date: "29/8/2013 13:27", end_station_name: "Adobe on Almaden", bike_id: 679, subscription: "Subscriber", zip_code: 95112)
+      Trip.create(duration: 138, start_date: "29/8/2013 16:57", start_station_name: "Post at Kearney", end_date: "29/8/2013 16:59", end_station_name: "Adobe on Almaden", bike_id: 679, subscription: "Customer", zip_code: 94117)
+
+      expect(Trip.customer_count).to eql(1)
+    end
+
+    it "can calculate customer subscription percentage" do
+      Trip.create(duration: 40, start_date: "29/8/2013 18:54", start_station_name: "Golden Gate at Polk", end_date: "29/8/2013 18:56", end_station_name: "Golden Gate at Polk", bike_id: 527, subscription: "Subscriber", zip_code: 94109)
+      Trip.create(duration: 109, start_date: "29/8/2013 13:25", start_station_name: "Golden Gate at Polk", end_date: "29/8/2013 13:27", end_station_name: "Adobe on Almaden", bike_id: 679, subscription: "Subscriber", zip_code: 95112)
+      Trip.create(duration: 138, start_date: "29/8/2013 16:57", start_station_name: "Post at Kearney", end_date: "29/8/2013 16:59", end_station_name: "Adobe on Almaden", bike_id: 679, subscription: "Customer", zip_code: 94117)
+
+      expect(Trip.customer_percentage).to eql(33.33)
+    end
+
+    it "can count subscriber subscription type" do
+      Trip.create(duration: 40, start_date: "29/8/2013 18:54", start_station_name: "Golden Gate at Polk", end_date: "29/8/2013 18:56", end_station_name: "Golden Gate at Polk", bike_id: 527, subscription: "Subscriber", zip_code: 94109)
+      Trip.create(duration: 109, start_date: "29/8/2013 13:25", start_station_name: "Golden Gate at Polk", end_date: "29/8/2013 13:27", end_station_name: "Adobe on Almaden", bike_id: 679, subscription: "Subscriber", zip_code: 95112)
+      Trip.create(duration: 138, start_date: "29/8/2013 16:57", start_station_name: "Post at Kearney", end_date: "29/8/2013 16:59", end_station_name: "Adobe on Almaden", bike_id: 679, subscription: "Customer", zip_code: 94117)
+
+      expect(Trip.subscriber_count).to eql(2)
+    end
+
+    it "can calculate subscriber subscription percentage" do
+      Trip.create(duration: 40, start_date: "29/8/2013 18:54", start_station_name: "Golden Gate at Polk", end_date: "29/8/2013 18:56", end_station_name: "Golden Gate at Polk", bike_id: 527, subscription: "Subscriber", zip_code: 94109)
+      Trip.create(duration: 109, start_date: "29/8/2013 13:25", start_station_name: "Golden Gate at Polk", end_date: "29/8/2013 13:27", end_station_name: "Adobe on Almaden", bike_id: 679, subscription: "Subscriber", zip_code: 95112)
+      Trip.create(duration: 138, start_date: "29/8/2013 16:57", start_station_name: "Post at Kearney", end_date: "29/8/2013 16:59", end_station_name: "Adobe on Almaden", bike_id: 679, subscription: "Customer", zip_code: 94117)
+
+      expect(Trip.subscriber_percentage).to eql(66.67)
     end
 
   end
