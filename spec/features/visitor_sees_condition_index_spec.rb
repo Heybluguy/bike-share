@@ -5,6 +5,6 @@ describe "When a visitor visits conditions index" do
 
     visit '/conditions'
 
-    expect(page).to have_content("Conditions")
+    expect(page).to have_content("Weather")
   end
 end

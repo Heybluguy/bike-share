@@ -19,9 +19,9 @@ describe "when a visitor visits weather dashboard" do
   Trip.create(duration: 71, start_date: "06/8/2013", start_station_name: "Mountain View City Hall", start_station_id: 27, end_date: "2013-08-29", end_station_name: "Mountain View City Hall", end_station_id: 27, bike_id: 48, subscription: "Subscriber", zip_code: 97214, condition_id: 6)
 
 
-  visit '/conditions-dashboard'
+  visit '/weather-dashboard'
 
-  expect(current_path).to eq("/conditions-dashboard")
+  expect(current_path).to eq("/weather-dashboard")
   expect(page).to have_content("Weather")
   expect(Condition.all.count).to eq(6)
   end
