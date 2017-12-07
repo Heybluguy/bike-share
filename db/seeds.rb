@@ -5,6 +5,8 @@ require 'csv'
 require 'date'
 require 'pry'
 
+puts "begin seed...."
+
 Station.destroy_all
 
 stations = CSV.open './db/csv/station.csv', headers:true, header_converters: :symbol
@@ -33,7 +35,7 @@ end
 
 Trip.destroy_all
 
-trips = CSV.open './db/fixture/trip_fixture.csv', headers:true, header_converters: :symbol
+trips = CSV.open './db/csv/trip.csv', headers:true, header_converters: :symbol
 trips.each do |row|
   zipcode = row[:zip_code].to_s.rjust(5, "0")[0..4]
   condition_id = Condition.date_id(Date.strptime(row[:start_date], "%m/%d/%Y"))
