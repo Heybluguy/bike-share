@@ -10,7 +10,6 @@
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </style>
 <body class="w3-white w3-content" style="max-width:1600px">
-
   <nav class="w3-sidebar w3-collapse w3-orange w3-animate-left" style="z-index:3;width:210px;" id="mySidebar"><br>
     <div class="w3-container">
       <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-orange" title="close menu">
@@ -33,9 +32,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       <i class="fa fa-linkedin w3-hover-opacity"></i>
     </div>
   </nav>
-
   <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
   <div class="w3-main w3-center" style="margin-left:200px">
     <hr>
     <header id="STATIONS">
@@ -48,24 +45,24 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         </div>
       </div>
     </header>
-   <div class="w3-light-grey w3-border w3-content w3-round w3-center w3-padding-large">
+  <div class="w3-light-grey w3-border w3-content w3-round w3-center w3-padding-large">
     <div class="info">
-        <h1>Conditions <%= "#{@condition.id}" %></h1>
-        <div class="conditions">
-          <p>Date: <%= @condition.date %></p>
-          <p>Max Temperature: <%= @condition.max_temperature %></p>
-          <p>Mean Temperature: <%= @condition.mean_temperature %></p>
-          <p>Min Temperature: <%= @condition.min_temperature %></p>
-          <p>Mean Humidity: <%= @condition.mean_humidity %></p>
-          <p>Mean Visibility: <%= @condition.mean_visibility %></p>
-          <p>Mean Wind Speed: <%= @condition.mean_wind_speed %></p>
-          <p>Precipitation: <%= @condition.precipitation %></p>
-            <form action="/conditions/<%=@condition.id %>" method="POST">
-              <input type="hidden" name="_method" value="DELETE">
-              <input type="submit" class="w3-button w3-bar w3-block w3-pink" value="delete"/>
-            </form>
-        </div>
+      <h1>Conditions <%= "#{@condition.id}" %></h1>
+      <div class="conditions">
+        <p>Date: <%= @condition.date %></p>
+        <p>Max Temperature: <%= @condition.max_temperature %></p>
+        <p>Mean Temperature: <%= @condition.mean_temperature %></p>
+        <p>Min Temperature: <%= @condition.min_temperature %></p>
+        <p>Mean Humidity: <%= @condition.mean_humidity %></p>
+        <p>Mean Visibility: <%= @condition.mean_visibility %></p>
+        <p>Mean Wind Speed: <%= @condition.mean_wind_speed %></p>
+        <p>Precipitation: <%= @condition.precipitation %></p>
+          <form action="/conditions/<%=@condition.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" class="w3-button w3-bar w3-block w3-pink" value="delete"/>
+          </form>
       </div>
+    </div>
   </div>
   <script>
     function w3_open() {

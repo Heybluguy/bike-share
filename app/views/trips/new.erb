@@ -45,29 +45,29 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     </div>
   </header>
   <div class="w3-light-grey w3-content w3-round w3-center w3-padding-large">
-  <hr>
-  <h1>Create New Trip </h1>
-  <form action="/trips" method="post">
-    Duration<br><input type= "number" name="trip[duration]" style="width: 210px"/>
-    <br>
-    Start Date<br><input type= "date" name="trip[start_date]" style="width: 210px"/>
-    <br>
-    Start Station Id<br><input type= "text" name="trip[start_station_id]" style="width: 210px"/>
-    <br>
-    End Date<br><input type= "date" name="trip[end_date]" style="width: 210px"/>
-    <br>
-    End Station Id<br><input type= "text" name="trip[end_station_id]" style="width: 210px"/>
-    <br>
-    Bike Id<br><input type= "number" name="trip[bike_id]" style="width: 210px"/>
-    <br>
-    Subscription Type<br><input type= "radio" name="trip[subscription]" checked> Customer<br>
-    <input type= "radio" name="trip[subscription]" > Subscriber<br>
-    <br>
-    Zip Code<br><input type= "number" name="trip[zip_code]" style="width: 210px"/><br>
-    <br>
-    <input type="submit" class="w3-button w3-bar w3-block w3-pink" value="submit" />
-  </form>
-</div>
+    <hr>
+    <h1>Create New Trip </h1>
+    <form action="/trips" method="post">
+      Duration<br><input type= "number" name="trip[duration]" style="width: 210px"/>
+      <br>
+      Start Date<br><input type= "date" name="trip[start_date]" style="width: 210px"/>
+      <br>
+      Start Station Id<br><input type= "text" name="trip[start_station_id]" style="width: 210px"/>
+      <br>
+      End Date<br><input type= "date" name="trip[end_date]" style="width: 210px"/>
+      <br>
+      End Station Id<br><input type= "text" name="trip[end_station_id]" style="width: 210px"/>
+      <br>
+      Bike Id<br><input type= "number" name="trip[bike_id]" style="width: 210px"/>
+      <br>
+      Subscription Type<br><input type= "radio" name="trip[subscription]" checked> Customer<br>
+      <input type= "radio" name="trip[subscription]" > Subscriber<br>
+      <br>
+      Zip Code<br><input type= "number" name="trip[zip_code]" style="width: 210px"/><br>
+      <br>
+      <input type="submit" class="w3-button w3-bar w3-block w3-pink" value="submit" />
+    </form>
+  </div>
   <script>
     function w3_open() {
         document.getElementById("mySidebar").style.display = "block";
