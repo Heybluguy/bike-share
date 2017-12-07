@@ -1,6 +1,6 @@
 class Station < ActiveRecord::Base
-  has_many :trips_leaving, class_name: "Trip", foreign_key: "start_station_id"
-  has_many :trips_arriving, class_name: "Trip", foreign_key: "end_station_id"
+  has_many :trips_leaving, class_name: "Trip", foreign_key: "start_station_id", dependent: :destroy
+  has_many :trips_arriving, class_name: "Trip", foreign_key: "end_station_id", dependent: :destroy
 
   validates_presence_of :name,
                         :dock_count,
