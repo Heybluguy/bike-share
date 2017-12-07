@@ -56,25 +56,26 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 <form action="/conditions/<%= @condition.id %>" method= "post">
   <p>Edit Conditions</p>
   <input type="hidden" name="_method" value="PUT" />
-  Date <input type= "date" name="condition[date]" value="<%= @condition.date %>"/>
+  Date<br><input type= "date" name="condition[date]" value="<%= @condition.date %>"/>
   <br>
-  Max Temperature <input type= "number" name="condition[max_temperature]" value="<%= @condition.max_temperature %>"/>
+  Max Temperature<br><input type= "number" name="condition[max_temperature]" value="<%= @condition.max_temperature %>"/>
   <br>
-  Mean Temperature<input type= "number" name="condition[mean_temperature]" value="<%= @condition.mean_temperature %>"/>
+  Mean Temperature<br><input type= "number" name="condition[mean_temperature]" value="<%= @condition.mean_temperature %>"/>
   <br>
-  Min Temperature<input type= "number" name="condition[min_temperature]" value="<%= @condition.min_temperature %>"/>
+  Min Temperature<br><input type= "number" name="condition[min_temperature]" value="<%= @condition.min_temperature %>"/>
 
   <br>
-  Mean Humidity<input type= "number" name="condition[mean_humidity]" value="<%= @condition.mean_humidity %>"/>
+  Mean Humidity<br><input type= "number" name="condition[mean_humidity]" value="<%= @condition.mean_humidity %>"/>
   <br>
-   Mean Visibility<input type= "number" name="condition[mean_visibility]" value="<%= @condition.mean_visibility %>"/>
+   Mean Visibility<br><input type= "number" name="condition[mean_visibility]" value="<%= @condition.mean_visibility %>"/>
   <br>
-  Mean Wind Speed<input type= "number" name="condition[mean_wind_speed]" value="<%= @condition.mean_wind_speed %>"/>
+  Mean Wind Speed<br><input type= "number" name="condition[mean_wind_speed]" value="<%= @condition.mean_wind_speed %>"/>
  <br>
- Precipitation<input type= "number" name="condition[precipitation]" value="<%= @condition.precipitation %>"/>
+ <p>Precipitation<br><input type= "number" name="condition[precipitation]" value="<%= @condition.precipitation %>"/>
+<br>
 <br>
 
-  <input type="submit" value="submit" />
+  <input type="submit" class="w3-button w3-bar w3-block w3-pink" value="submit" />
 </div>
 </div>
 <br>
