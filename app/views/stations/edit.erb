@@ -44,24 +44,24 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       </div>
     </div>
   </header>
-  <div class="w3-light-grey w3-border w3-content w3-round w3-center w3-padding-large">
+  <div class="w3-section w3-light-grey w3-border w3-content w3-round w3-center w3-padding-large">
   <hr>
     <form action="/stations/<%= @station.id %>" method= "post">
       <h1>Edit Station</h1>
       <input type="hidden" name="_method" value="PUT" />
       <div class= "w3-section">
-        Station Name<br><input type='text' name= 'station[name]' value="<%= @station.name %>" style="width: 210px"/>
+        Station Name<br><input type='text' name= 'station[name]' value="<%= @station.name %>" style="width: 410px"/>
       </div>
       <div class= "w3-section">
-        Dock Count<br><input type= "number" name="station[dock_count]" value="<%= @station.dock_count %>" style="width: 210px"/>
+        Dock Count<br><input type= "number" name="station[dock_count]" value="<%= @station.dock_count %>" style="width: 410px"/>
       </div>
       <div class= "w3-section">
-        City<br><input type= "text" name="station[city]" value="<%= @station.city %>" style="width: 210px"/>
+        City<br><input type= "text" name="station[city]" value="<%= @station.city %>" style="width: 410px"/>
       </div>
       <div class= "w3-section">
-        Installation Date<br><input type= "date" name="station[installation_date]" value="<%=@station.installation_date %>" style="width: 210px"/><br><br>
+        Installation Date<br><input type= "date" name="station[installation_date]" value="<%=@station.installation_date %>" style="width: 410px"/><br><br>
       </div>
-      <input type= 'submit' class="w3-button w3-block w3-pink" value="submit"/>
+      <input type= 'submit' class="w3-button w3-bar w3-block w3-pink" value="submit"/>
     </form>
     <br>
   </div>

@@ -11,7 +11,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </style>
 <body class="w3-white w3-content" style="max-width:1600px">
 
-  <nav class="w3-sidebar w3-collapse w3-orange w3-animate-left" style="z-index:3;width:210px;" id="mySidebar"><br>
+  <nav class="w3-sidebar w3-collapse w3-orange w3-animate-left" style="z-index:3;width:200px;" id="mySidebar"><br>
     <div class="w3-container">
       <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-orange" title="close menu">
         <i class="fa fa-remove"></i>
@@ -50,28 +50,30 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       </div>
     </header>
     <br>
-    <h3> Month by month trip count breakdown: </h3>
-      <div class="w3-third w3-row-padding w3-container w3-margin-bottom">
-        <% Trip.month_by_month_breakdown.each do |month_count| %>
-          <div class="w3-container w3-border w3-light-grey w3-round">
-          <%= month_count.first.strftime("%B %Y") %>
-          <p> Trip Count: <%= month_count.last %> </p>
-          </div>
-          <br>
-        <%end%>
-      </div>
-      <div class="w3-third w3-container w3-margin-bottom">
-        <div class="w3-row-padding w3-container w3-border w3-light-grey w3-round">
-          <h3> Subtotals by year: <% @trip.year_subtotals.each do |year_count| %> </h3>
-            <h4> Year: <%= year_count.first.strftime("%Y") %>  </h4>
-            <p> Trip Count: <%= year_count.last %> </p>
-          <%end%>
-        </div>
-      </div>
 
-      <div class="w3-container w3-center w3-margin-bottom">
-        <div class="w3-row-padding
-        w3-third w3-container w3-border w3-light-grey w3-center w3-round">
+    <div class="w3-container">
+      <div class="w3-bar w3-light-grey w3-border w3-round">
+          <h4> Weather on the day with the most rides </h4>
+          <p>Max Temperature: <%= @trip.weather_on_the_day_with_the_most_rides.max_temperature %></p>
+          <p>Mean Temperature: <%= @trip.weather_on_the_day_with_the_most_rides.mean_temperature %></p>
+          <p>Min Temperature: <%= @trip.weather_on_the_day_with_the_most_rides.min_temperature %></p>
+          <p>Mean Humidity: <%= @trip.weather_on_the_day_with_the_most_rides.mean_humidity %></p>
+          <p>Mean Visibility: <%= @trip.weather_on_the_day_with_the_most_rides.mean_visibility %></p>
+          <p>Mean Wind Speed: <%= @trip.weather_on_the_day_with_the_most_rides.mean_wind_speed %></p>
+          <p>Precipitation: <%= @trip.weather_on_the_day_with_the_most_rides.precipitation %></p>
+      </div>
+      <div class="w3-bar w3-light-grey w3-border w3-round">
+          <h4> Weather on the day with the fewest rides </h4>
+          <p>Max Temperature: <%= @trip.weather_on_the_day_with_the_fewest_rides.max_temperature %></p>
+          <p>Mean Temperature: <%= @trip.weather_on_the_day_with_the_fewest_rides.mean_temperature %></p>
+          <p>Min Temperature: <%= @trip.weather_on_the_day_with_the_fewest_rides.min_temperature %></p>
+          <p>Mean Humidity: <%= @trip.weather_on_the_day_with_the_fewest_rides.mean_humidity %></p>
+          <p>Mean Visibility: <%= @trip.weather_on_the_day_with_the_fewest_rides.mean_visibility %></p>
+          <p>Mean Wind Speed: <%= @trip.weather_on_the_day_with_the_fewest_rides.mean_wind_speed %></p>
+          <p>Precipitation: <%= @trip.weather_on_the_day_with_the_fewest_rides.precipitation %></p>
+      </div>
+      <div class="w3-bar w3-center w3-margin-top">
+        <div class="w3-row-padding w3-container w3-border w3-light-grey w3-center w3-round">
           <p> Average duration of a ride: <%= "#{@trip.average_duration}" %></p>
           <p> Longest Ride: <%= "#{@trip.longest_ride}" %></p>
           <p> Shortest Ride: <%= "#{@trip.shortest_ride}" %></p>
@@ -85,31 +87,25 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
           <p> Single date with the highest number of trips:  <%= "#{@trip.date_with_highest_trips}" %> Total trips: <%="#{@trip.highest_trip_date_count}"%></p>
           <p> Single date with the lowest number of trips:  <%= "#{@trip.date_with_lowest_trips}" %> Total trips: <%="#{@trip.lowest_trip_date_count}"%></p>
         </div>
-
-        <div>
-          <h4> Weather on the day with the most rides </h4>
-          <p>Max Temperature: <%= @trip.weather_on_the_day_with_the_most_rides.max_temperature %></p>
-          <p>Mean Temperature: <%= @trip.weather_on_the_day_with_the_most_rides.mean_temperature %></p>
-          <p>Min Temperature: <%= @trip.weather_on_the_day_with_the_most_rides.min_temperature %></p>
-          <p>Mean Humidity: <%= @trip.weather_on_the_day_with_the_most_rides.mean_humidity %></p>
-          <p>Mean Visibility: <%= @trip.weather_on_the_day_with_the_most_rides.mean_visibility %></p>
-          <p>Mean Wind Speed: <%= @trip.weather_on_the_day_with_the_most_rides.mean_wind_speed %></p>
-          <p>Precipitation: <%= @trip.weather_on_the_day_with_the_most_rides.precipitation %></p>
-        </div>
-        <div>
-          <h4> Weather on the day with the fewest rides </h4>
-          <p>Max Temperature: <%= @trip.weather_on_the_day_with_the_fewest_rides.max_temperature %></p>
-          <p>Mean Temperature: <%= @trip.weather_on_the_day_with_the_fewest_rides.mean_temperature %></p>
-          <p>Min Temperature: <%= @trip.weather_on_the_day_with_the_fewest_rides.min_temperature %></p>
-          <p>Mean Humidity: <%= @trip.weather_on_the_day_with_the_fewest_rides.mean_humidity %></p>
-          <p>Mean Visibility: <%= @trip.weather_on_the_day_with_the_fewest_rides.mean_visibility %></p>
-          <p>Mean Wind Speed: <%= @trip.weather_on_the_day_with_the_fewest_rides.mean_wind_speed %></p>
-          <p>Precipitation: <%= @trip.weather_on_the_day_with_the_fewest_rides.precipitation %></p>
-        </div
-
       </div>
+    </div>
+    <div class="w3-light-grey w3-border w3-margin-top w3-content w3-round w3-center w3-container">
+      <h3> Month by month trip count breakdown: </h3>
+        <% Trip.month_by_month_breakdown.each do |month_count| %>
+          <div class="w3-bar w3-row-padding w3-border w3-light-grey w3-round">
+          <%= month_count.first.strftime("%B %Y") %>
+          <p> Trip Count: <%= month_count.last %> </p>
+          </div>
+        <%end%>
+      <div class="w3-light-grey w3-round">
+          <h3> Subtotals by year: <% @trip.year_subtotals.each do |year_count| %> </h3>
+            <h4> Year: <%= year_count.first.strftime("%Y") %>  </h4>
+            <p> Trip Count: <%= year_count.last %> </p>
+          <%end%>
+      </div>
+      <br>
+    </div>
     <br>
-
   </div>
   <script>
     function w3_open() {
