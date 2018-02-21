@@ -6,6 +6,7 @@ gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'will_paginate', '~> 3.0'
 gem 'pry'
+gem 'rake'
 
 group :development, :test do
   gem 'shotgun'
@@ -16,4 +17,5 @@ group :development, :test do
   gem 'launchy'
   gem 'rack-test'
   gem 'database_cleaner'
+
 end
